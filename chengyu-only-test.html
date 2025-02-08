@@ -13,7 +13,7 @@
       $('#tokens').text(tokens.join());
       const colors = ["salmon", "skyblue", "lightgold", "lavender"];
       let i = 0;
-      $('#all-chengyu').findAndSpanTokens({
+      $('#all-chengyu p').findAndSpanTokens({
         surrounder: function (tok) {
           return `<span class="box-${colors[i++ % colors.length]}">` + tok + "</span>";
         }
@@ -38,6 +38,8 @@
 
 
 <body>
+  <h1>Token separation experiment with range.expand("word")</h1>
+  <p>The following text has been tokenized as it would be if you were to double click on the word to create a highlight of the word. This is an experiment to see how different browsers and OS venders tokenize chinese "words" (詞)</p>
   <div id="count"></div>
   <div id="all-chengyu">
     <p>心花怒放</p>
@@ -135,6 +137,8 @@
     <p>成群結隊</p>
     <p>千山萬水</p>
   </div>
+  <h3>Comma Separated Tokens:</h3>
+  <p>The above text has been tokenized by the browser's range expand strategy. A list of the comma separated tokens in bellow.</p>
   <div id="tokens">
   </div>
 </body>

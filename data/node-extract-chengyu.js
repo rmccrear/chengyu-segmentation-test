@@ -31,3 +31,17 @@ html += '</body></html>';
 fs.writeFileSync(path.join(__dirname, 'chengyu-list-raw.html'), html, 'utf8');
 
 console.log('chengyu.txt saved');
+
+// create html page with each chengyu in a p tag
+var html = '<!doctype html><html><head><title>Chengyu Explanations</title></head><body>';
+text.split('\n').forEach(function(c) {
+  html += '<p>' + c + '</p>';
+});
+html += '</body></html>';
+// save to chengyu-list.html
+fs.writeFileSync(path.join(__dirname, 'chengyu-explainations-raw.html'), html, 'utf8');
+
+console.log('chengyu-explainations saved');
+
+
+
