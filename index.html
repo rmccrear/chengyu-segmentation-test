@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery.browsergment.js"></script>
+    <script>
+      $(function () {
+        words = [];
+        console.dir($('p').findTokens());
+        $('p').findAndSpanTokens();
+        // $('#par1').findAndSpanTokens({surrounder: function(tok) {
+        //      return "<div>" + tok + "</div>";
+        //  }});
+        $('#par2').findAndSpanTokens();
+      });
+    </script>
+  </head>
+
+  <body>
+    <p id='par1'> Ladybugs lounge in <b> hammocks </b> made for them. </p>
+    <p id='par2'>毛毛蟲是一種蟲子。</p>
+  </body>
+</html>
