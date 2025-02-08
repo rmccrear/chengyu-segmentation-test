@@ -11,8 +11,29 @@
       $('#count').text(`Count of tokens: ${tokens.length} `)
       console.log(tokens);
       $('#tokens').text(tokens.join());
+      const colors = ["salmon", "skyblue", "lightgold", "lavender"];
+      let i = 0;
+      $('#all-chengyu').findAndSpanTokens({
+        surrounder: function (tok) {
+          return `<span class="box-${colors[i++ % colors.length]}">` + tok + "</span>";
+        }
+      });
     });
   </script>
+  <style>
+    .box-salmon {
+      background-color: burlywood;
+    }
+    .box-skyblue {
+      background-color: aliceblue;
+    }
+    .box-lightgold {
+      background-color: khaki;
+    }
+    .box-lavender {
+      background-color: lavenderblush;
+    }
+  </style>
 </head>
 
 
